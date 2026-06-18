@@ -1,0 +1,51 @@
+0
+age
+bmi
+carb_intake
+protein_intake
+fat_intake
+fiber_intake
+sugar_intake
+glycemic_index
+portion_size
+water_intake
+insulin_dose
+medication_adherence
+physical_activity
+stress_level
+sleep_hours
+pre_meal_glucose
+meal_risk_score
+gi_portion
+carb_gi
+activity_bmi
+stress_sleep
+sugar_gl
+risk_adherence
+insulin_carb
+premeal_carb
+protein_carb_ratio
+fiber_carb_ratio
+sugar_carb_ratio
+fat_carb_ratio
+total_macros
+carb_macro_pct
+protein_macro_pct
+fat_macro_pct
+smokes
+drinks
+lifestyle_risk_score
+high_lifestyle_risk
+gender_Male
+diabetes_type_Type 2
+meal_time_Dinner
+meal_time_Lunch
+meal_time_Snack
+smoking_status_Yes
+alcohol_consumption_Yes
+bmi_category_Obese
+bmi_category_Overweight
+bmi_category_Underweight
+age_group_Middle-Aged (51-65)
+age_group_Seniors (66+)
+age_group_Young Adults (18-35)
