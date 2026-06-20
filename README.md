@@ -91,6 +91,32 @@ All three models were trained on SMOTE-resampled data and evaluated on an unseen
 
 \---
 
+SHAP Explainability
+Model predictions are explained using SHAP (SHapley Additive exPlanations) in
+`06_shap_explainability.ipynb`. In a healthcare AI system, a prediction alone is
+not enough — clinicians and patients need to understand why the model flagged a
+meal as high-risk.
+What SHAP Provides
+Plot	What it Shows
+Bar Plot	Overall feature importance ranking across all patients
+Beeswarm Plot	Importance + direction of impact + distribution across all patients
+Dependence Plots	How each top feature's value maps to its spike risk contribution
+Waterfall Plot (Spike)	Step-by-step explanation of why a specific high-risk patient was flagged
+Waterfall Plot (No Spike)	Step-by-step explanation of why a low-risk patient was cleared
+Force Plot	Interactive horizontal explanation for individual predictions
+Key Clinical Finding from SHAP
+The SHAP analysis confirmed that the dietary features engineered in notebook 03
+are the dominant drivers of glucose spike prediction:
+`carb_intake` and `premeal_carb` — highest positive impact on spike risk
+`sugar_carb_ratio` and `gi_portion` — strong spike risk amplifiers
+`fiber_carb_ratio` — strongest protective feature (high fiber reduces spike risk)
+`insulin_carb` — higher insulin coverage relative to carb load reduces risk
+`lifestyle_risk_score` — aggregate lifestyle burden acts as a secondary risk factor
+> This validates the clinical relevance of the feature engineering pipeline and
+> provides actionable dietary insight: reducing carbohydrate and sugar intake while
+> increasing fibre are the most impactful interventions for spike prevention.
+---
+
 ## Setup \& Installation
 
 ### 1\. Clone the Repository
@@ -151,8 +177,9 @@ glucose-spike-prediction/
 │   ├── 02\_eda.ipynb
 │   ├── 03\_feature\_engineering.ipynb
 │   ├── 04\_model\_development.ipynb
-│   └── 05\_model\_evaluation.ipynb
-│
+│   ├── 05\_model\_evaluation.ipynb
+│	└── 06_shap_explainability.ipynb
+
 └── outputs/
     └── figures/                          - saved charts and visualisations
 ```
